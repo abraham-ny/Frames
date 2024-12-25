@@ -23,7 +23,8 @@ namespace Frames
         public MainWindow()
         {
             InitializeComponent();
-           // MainWindow.
+            Menu mnu = new Menu();
+            Menu fileMnu = new Menu();
             
         }
     }
