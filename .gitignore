@@ -11,3 +11,6 @@
 /Frames/obj
 /Frames/build/
 /Frames/bin/
+Frames/bin
+Frames/Debug
+Frames/Release
