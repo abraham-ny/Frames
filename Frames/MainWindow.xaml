@@ -1,0 +1,30 @@
+﻿<Window x:Class="Frames.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frames"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        
+        <StatusBar Height="19" VerticalAlignment="Bottom"/>
+        <Separator Margin="0,24,0,19"/>
+        <MediaElement x:Name="mediaElement" HorizontalAlignment="Left" Height="180" Margin="10,24,0,0" VerticalAlignment="Top" Width="379"/>
+        <ListBox x:Name="selectedFileInfoList" Height="180" Margin="394,24,10,0" VerticalAlignment="Top"/>
+        <ListView x:Name="extractedFramesPreviewGrid" HorizontalAlignment="Left" Height="174" Margin="10,0,0,19" VerticalAlignment="Bottom" Width="379">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Slider x:Name="slider" Margin="394,0,10,175" VerticalAlignment="Bottom"/>
+        <Label x:Name="label" Content="from x to x(last frame to extract)" Margin="394,0,10,144" VerticalAlignment="Bottom"/>
+        <ProgressBar Height="10" Margin="394,0,10,129" VerticalAlignment="Bottom"/>
+        <Label x:Name="label1" Content="Progress %" Margin="394,0,10,98" VerticalAlignment="Bottom"/>
+        <Button x:Name="button" Content="Extract" Margin="394,0,323,24" VerticalAlignment="Bottom"/>
+        <Button x:Name="button1" Content="Stop" HorizontalAlignment="Right" Margin="0,0,233,24" VerticalAlignment="Bottom" Width="75"/>
+        <Button x:Name="button2" Content="Share" HorizontalAlignment="Right" Margin="0,0,10,24" VerticalAlignment="Bottom" Width="75"/>
+    </Grid>
+</Window>

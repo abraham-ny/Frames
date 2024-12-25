@@ -1,0 +1,13 @@
+*.log
+*.exe
+*.dll
+*.msi
+*.nupkg
+*/bin
+/build
+*/obj
+/Properties
+/.vs
+/Frames/obj
+/Frames/build/
+/Frames/bin/
