@@ -12,20 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wpf.Ui.Appearance;
+using Wpf.Ui.Controls;
 
 namespace Frames
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : FluentWindow
     {
         public MainWindow()
         {
             InitializeComponent();
-            Menu mnu = new Menu();
-            Menu fileMnu = new Menu();
-            
+            ApplicationThemeManager.Apply(this);
+            for(int i = 0; i < 12; i++)
+            {
+                homeListView.Items.Add("Random Item");
+            }
         }
     }
 }
