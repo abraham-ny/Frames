@@ -34,27 +34,10 @@
                     <ui:MenuItem Header="About"/>
                 </ui:MenuItem>
             </Menu>
-            <ui:TabView Margin="0">
-                <ui:TabViewItem Header="Home">
-                    
-                </ui:TabViewItem>
-                <ui:TabViewItem Header="Running Projects">
-                    
-                </ui:TabViewItem>
-            </ui:TabView>
+            <ui:NavigationView Margin="0" Height="400">
+                
+            </ui:NavigationView>
         </DockPanel>
-        <ui:Card Height="196" BorderBrush="Black" Margin="10" BorderThickness="1">
-            <Grid Background="Transparent">
-                <ui:TextBlock Text="Suggested Show" Margin="10,0,0,5" VerticalAlignment="Bottom"/>
-                <ui:Button Content="Get" Height="20" Width="50" VerticalAlignment="Bottom" Margin="10,0,0,30" HorizontalAlignment="Left"/>
-            </Grid>
-        </ui:Card>
-        <ui:ListView x:Name="homeListView" Background="Transparent">
-            <ui:ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ui:ListView.View>
-        </ui:ListView>
+        
     </StackPanel>
 </ui:FluentWindow>

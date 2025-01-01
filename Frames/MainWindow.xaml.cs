@@ -28,7 +28,8 @@ namespace Frames
             ApplicationThemeManager.Apply(this);
             for(int i = 0; i < 12; i++)
             {
-                homeListView.Items.Add("Random Item");
+              
+                //homeListView.Items.Add("Random Item");
             }
         }
     }
