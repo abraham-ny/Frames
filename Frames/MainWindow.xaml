@@ -4,14 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-        xmlns:local="clr-namespace:Frames"
+        xmlns:local="clr-namespace:Frames" 
+        xmlns:data="using:Frames.Model"
         mc:Ignorable="d"
-        Title="Frames" Height="450" Width="800">
+        Title="Frames" SizeChanged="WinResized">
     <StackPanel>
         <ui:TitleBar Title="Frames App"/>
         <DockPanel>
             <Menu x:Name="menuBar" DockPanel.Dock="Top">
                 <ui:MenuItem Header="File">
+                    <ui:MenuItem Header="New" Click="MenuItem_Click"/>
+                    <Separator/>
                     <ui:MenuItem Header="Open"/>
                     <ui:MenuItem Header="Open Recent"/>
                     <Separator/>
@@ -34,10 +37,56 @@
                     <ui:MenuItem Header="About"/>
                 </ui:MenuItem>
             </Menu>
-            <ui:NavigationView Margin="0" Height="400">
-                
-            </ui:NavigationView>
+            
         </DockPanel>
-        
+        <TabControl x:Name="tabControl" Margin="0">
+            <TabItem Header="Home">
+                <Grid>
+                    <ui:ListView x:Name="homeList">
+                        <ui:ListView.ItemTemplate>
+                            <DataTemplate DataType="data:Project">
+                                <ui:Card Padding="0" Height="50" VerticalContentAlignment="Center">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="100"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Name="itemIcon"/>
+                                        <Label Grid.Column="1" Margin="10,0,0,0" Content="{Binding Name}"/>
+                                        <Label Grid.Column="2" Margin="10,0,0,0" Content="{Binding Status}"/>
+                                        <Label Grid.Column="3" Margin="10,0,0,0" Content="{Binding Tag}"/>
+                                        <ProgressBar Height="50" IsIndeterminate="False" Value="10" Grid.Column="4"/>
+                                    </Grid>
+                                </ui:Card>
+                            </DataTemplate>
+                        </ui:ListView.ItemTemplate>
+                    </ui:ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Running Tasks">
+                <Grid>
+                    <ui:Card BorderBrush="Black" Padding="0" Height="200" Width="250" VerticalContentAlignment="Center">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="120"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Name="itemIcon"/>
+                            <Label Grid.Row="2" Margin="10,0,0,0" Content="Title"/>
+                            <Label Grid.Row="3" Margin="10,0,0,0" Content="Description"/>
+                            <Label Grid.Row="4" Margin="10,0,0,0" Content="Status"/>
+                            <ProgressBar Height="10" IsIndeterminate="False" Value="10" Grid.Row="1"/>
+                        </Grid>
+                    </ui:Card>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </StackPanel>
 </ui:FluentWindow>

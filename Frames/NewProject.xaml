@@ -1,0 +1,19 @@
+﻿<ui:FluentWindow
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Frames"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" x:Class="Frames.NewProject"
+      mc:Ignorable="d"
+      Title="New Project" Width="447" Height="204" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+
+    <Grid>
+        <ui:Image HorizontalAlignment="Left" x:Name="prjThumb" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <ui:TextBox x:Name="prjNameTbx" Height="29" Margin="141,10,79,0" TextWrapping="Wrap" PlaceholderText="Project Name" VerticalAlignment="Top" FontSize="18" MaxLines="1"/>
+        <ui:Button x:Name="autoBtn" Content="Auto" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="61" Height="29"/>
+        <Label x:Name="prjDetails" Content="Project Details (Path, Num of Files, total size etc)" Margin="141,54,10,49"/>
+        <ui:Button x:Name="acceptBtn" Click="acceptBtn_Click" Content="Accept" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="75"/>
+        <ui:Button x:Name="noBtn" Click="noBtn_Click" Content="Cancel" Margin="108,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="76"/>
+    </Grid>
+</ui:FluentWindow>
